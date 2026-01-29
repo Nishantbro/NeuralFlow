@@ -3,7 +3,7 @@
    =================================== */
 
 :root {
-    /* Colors - Dark Mode (Default) */
+    /* Colors */
     --primary-dark: #0A1628;
     --primary-navy: #1A2942;
     --accent-cyan: #00D9FF;
@@ -39,24 +39,6 @@
     --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.15);
     --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.25);
     --shadow-glow: 0 0 30px var(--glow-cyan);
-}
-
-/* Light Mode Theme */
-:root.light-mode {
-    /* Colors - Light Mode */
-    --primary-dark: #F5F5F5;
-    --primary-navy: #E8E8E8;
-    --accent-cyan: #0099FF;
-    --accent-blue: #0066CC;
-    --accent-purple: #6B4FFF;
-    --text-white: #1A1A1A;
-    --text-gray: #555555;
-    --text-light: #333333;
-    --background-dark: #FFFFFF;
-    --card-bg: #F0F0F0;
-    --card-hover: #E5E5E5;
-    --glow-cyan: rgba(0, 153, 255, 0.2);
-    --glow-blue: rgba(0, 102, 204, 0.15);
 }
 
 * {
@@ -327,82 +309,6 @@ body.menu-open {
     background-color: var(--text-white);
     transition: var(--transition-fast);
     border-radius: 2px;
-}
-
-/* ===================================
-   Theme Toggle Button
-   =================================== */
-
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: rgba(0, 217, 255, 0.1);
-    border: 2px solid var(--accent-cyan);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all var(--transition-medium);
-    color: var(--accent-cyan);
-    margin-right: 1rem;
-    padding: 0;
-    position: relative;
-    z-index: 100;
-}
-
-.theme-toggle:hover {
-    background: rgba(0, 217, 255, 0.2);
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
-}
-
-.theme-toggle:active {
-    transform: scale(0.95);
-}
-
-.theme-toggle svg {
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    transition: all var(--transition-medium);
-    color: var(--accent-cyan);
-}
-
-.theme-toggle .sun-icon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-}
-
-.theme-toggle .moon-icon {
-    opacity: 0;
-    transform: rotate(-180deg) scale(0);
-}
-
-/* Light mode adjustments */
-:root.light-mode .theme-toggle {
-    background: rgba(0, 102, 204, 0.1);
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-}
-
-:root.light-mode .theme-toggle:hover {
-    background: rgba(0, 102, 204, 0.2);
-    box-shadow: 0 0 15px rgba(0, 102, 204, 0.4);
-}
-
-:root.light-mode .theme-toggle svg {
-    color: var(--accent-blue);
-}
-
-:root.light-mode .theme-toggle .sun-icon {
-    opacity: 0;
-    transform: rotate(180deg) scale(0);
-}
-
-:root.light-mode .theme-toggle .moon-icon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
 }
 
 /* ===================================
@@ -1174,18 +1080,6 @@ body.menu-open {
         padding: 0 1.5rem;
     }
     
-    /* Theme toggle mobile */
-    .theme-toggle {
-        width: 40px;
-        height: 40px;
-        margin-right: 0.75rem;
-    }
-    
-    .theme-toggle svg {
-        width: 20px;
-        height: 20px;
-    }
-    
     /* Fixed mobile navigation */
     .nav-menu {
         position: fixed;
@@ -1458,18 +1352,6 @@ body.menu-open {
 @media (max-width: 480px) {
     .container {
         padding: 0 1rem;
-    }
-    
-    /* Theme toggle extra small mobile */
-    .theme-toggle {
-        width: 38px;
-        height: 38px;
-        margin-right: 0.5rem;
-    }
-    
-    .theme-toggle svg {
-        width: 18px;
-        height: 18px;
     }
     
     /* Extra small mobile fixes */

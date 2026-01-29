@@ -1,4 +1,61 @@
 // ===================================
+// Theme Toggle Dark/Light Mode
+// ===================================
+
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+// Initialize theme from localStorage or system preference
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme) {
+        // Use saved preference
+        if (savedTheme === 'light') {
+            htmlElement.classList.add('light-mode');
+        } else {
+            htmlElement.classList.remove('light-mode');
+        }
+    } else if (prefersDark) {
+        // Use system preference (dark is default, so don't add class)
+        htmlElement.classList.remove('light-mode');
+    }
+}
+
+// Initialize theme on page load
+initializeTheme();
+
+// Theme toggle click handler
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        htmlElement.classList.toggle('light-mode');
+        
+        // Save preference to localStorage
+        const currentTheme = htmlElement.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme);
+        
+        // Add visual feedback
+        themeToggle.style.transform = 'rotate(360deg)';
+        setTimeout(() => {
+            themeToggle.style.transform = 'rotate(0deg)';
+        }, 400);
+    });
+}
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        // Only apply if user hasn't set a preference
+        if (e.matches) {
+            htmlElement.classList.remove('light-mode');
+        } else {
+            htmlElement.classList.add('light-mode');
+        }
+    }
+});
+
+// ===================================
 // Mobile Navigation Toggle
 // ===================================
 

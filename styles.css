@@ -50,6 +50,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    color-scheme: dark;
 }
 
 body {
@@ -400,7 +401,6 @@ body.menu-open {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 2rem;
-    color: var(--text-white);
 }
 
 .hero-title-line {
@@ -1639,16 +1639,8 @@ a:focus-visible {
     }
 }
 
-/* Dark mode enhancement (optional) */
-@media (prefers-color-scheme: light) {
-    :root {
-        --background-dark: #F5F7FA;
-        --primary-dark: #FFFFFF;
-        --text-light: #1A2942;
-        --text-gray: #6B7280;
-        --card-bg: #FFFFFF;
-    }
-}
+/* Always use dark theme - no light mode override */
+/* This ensures consistent cyan/blue colors regardless of browser/system settings */
 
 /* Print styles */
 @media print {
